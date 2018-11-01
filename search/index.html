@@ -1,0 +1,103 @@
+---
+layout: default
+permalink: /search/
+sidebar: no
+title: Search
+---
+<style>
+  .hl {
+    font-weight: bold;
+    color: #6a6a6a;
+  }
+  h4 {
+    margin-bottom: 0 !important;
+  }
+  div.excerpt {
+    margin-bottom: 1.5em;
+    font-size: 11pt;
+  }
+</style>
+
+<div id="search-matches">
+  Searching...
+</div>
+
+<script src="/js/lunr.js"></script>
+<script>
+  window.addEventListener('load', function() {
+    
+    function loadPageData(onData) {
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            onData(JSON.parse(xhr.responseText));
+        }
+      };
+      xhr.open('GET', '/search/pages.json', true);
+      xhr.send();
+    }
+
+    function buildIndex(documents) {
+      var idx = lunr(function () {
+        this.ref('url');
+        this.field('body');
+
+        documents.forEach(function (doc) {
+          this.add(doc);
+        }, this);
+      });
+      return idx;
+    }
+
+    function toHTML(match, terms, page) {
+      var url = match['ref'];
+      var title = page['title'];
+
+      var excerpt = page['body'];
+      if (excerpt.length > 140) {
+        excerpt = excerpt.substr(0, 140) + '...';
+      }
+
+      // Highlight
+      for (var i = 0; i < terms.length; i++) {
+        var escaped = terms[i].replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        var re = new RegExp('(' + escaped + ')', 'gi')
+        excerpt = excerpt.replace(re, '<span class="hl">$1</span>');
+      }
+
+      var result = '<h4><a href="' + url + '">' + title + '</a></h4>\n';
+      result += '<div class="excerpt">' + excerpt + '</div>\n';
+      return result;
+    }
+
+    function getParameterByName(name) {
+      name = name.replace(/[\[\]]/g, '\\$&');
+      var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+      var results = regex.exec(window.location.href);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    loadPageData(function(data) {
+      var idx = buildIndex(data);
+
+      var pagesByUrl = {};
+      for (var i = 0; i < data.length; i++) {
+        pagesByUrl[data[i]['url']] = data[i];
+      }
+
+      var q = getParameterByName('q');
+      var matches = idx.search(q);
+      var terms = q.match(/\S+/g) || [];
+
+      var htmlContent = '<p><small>' + matches.length + ' matches</small></p>';
+      for (var i = 0; i < matches.length; i++) {
+        var match = matches[i];
+        var page = pagesByUrl[match['ref']];
+        htmlContent += toHTML(match, terms, page);
+      }
+      document.getElementById('search-matches').innerHTML = htmlContent;
+    });
+  });
+</script>

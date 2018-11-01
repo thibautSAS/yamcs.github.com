@@ -38,12 +38,21 @@
 
   </div>
   <script>
-    (function () {
+    window.addEventListener('load', function() {
       var emailEl = document.getElementById('site_m');
       var v = atob(emailEl.getAttribute('data-m1')) + atob(emailEl.getAttribute('data-m2'));
       emailEl.setAttribute('hr' + 'ef', 'ma' + 'ilt' + 'o:' + v);
       emailEl.innerText = v;
-    })();
+
+      var regex = new RegExp('[?&]q(=([^&#]*)|&|#|$)');
+      var results = regex.exec(window.location.href);
+      if (results && results[2]) {
+        var searchBoxEl = document.getElementById('search-box');
+        if (searchBoxEl) {
+          searchBoxEl.value = decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+      }
+    });
   </script>
 
 </footer>
