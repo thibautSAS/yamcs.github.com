@@ -15,6 +15,7 @@ title: Search
   div.excerpt {
     margin-bottom: 1.5em;
     font-size: 11pt;
+    max-width: 600px;
   }
 </style>
 
@@ -41,6 +42,7 @@ title: Search
       var idx = lunr(function () {
         this.ref('url');
         this.field('body');
+        this.metadataWhitelist = ['position'];
 
         documents.forEach(function (doc) {
           this.add(doc);
@@ -53,9 +55,27 @@ title: Search
       var url = match['ref'];
       var title = page['title'];
 
-      var excerpt = page['body'];
-      if (excerpt.length > 140) {
-        excerpt = excerpt.substr(0, 140) + '...';
+      var firstMatchPosition;
+      var metadata = match['matchData']['metadata'];
+      for (var key in metadata) {
+        var pos = metadata[key]['body']['position'][0][0];
+        if (firstMatchPosition === undefined || firstMatchPosition > pos) {
+          firstMatchPosition = pos;
+        }
+      }
+      var excerpt = '';
+      var excerptLength = 200;
+
+      // No need to offset if the first match is already visible.
+      if (firstMatchPosition < excerptLength) {
+        firstMatchPosition = 0;
+      } else {
+        excerpt = '... ';
+      }
+
+      excerpt += page['body'].substr(firstMatchPosition);
+      if (excerpt.length > excerptLength) {
+        excerpt = excerpt.substr(0, excerptLength) + ' ...';
       }
 
       // Highlight
