@@ -4,9 +4,11 @@ permalink: /docs/http/Get_Parameter_Samples/
 sidebar: yes
 ---
 
-Sample the history of values for the specified parameter:
+Sample the history of values for the specified parameter by dividing it in a number of intervals and returning aggregated statistics (max,min,avg) about each interval:
 
     GET /api/archive/:instance/parameters/:namespace/:name/samples   
+
+This operation is useful when making high-level overviews (such as plots) of a parameter's value over large time intervals without having to retrieve each and every individual parameter value.
 
 {% hint %}
 By default this operation fetches data from the parameter archive and/or parameter cache. If these services are not configured, you can still get correct results by specifying the option <tt>source=replay</tt> as detailed below.
@@ -34,7 +36,7 @@ By default this operation fetches data from the parameter archive and/or paramet
     <tr>
         <td class="code">count</td>
         <td class="code">int</td>
-        <td>Number of returned samples. Default: <tt>500</tt></td>
+        <td>Number of intervals to use. Default: <tt>500</tt></td>
     </tr>
     <tr>
         <td class="code">order</td>

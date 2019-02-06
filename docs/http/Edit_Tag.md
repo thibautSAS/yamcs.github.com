@@ -53,7 +53,7 @@ Change the color, and the description:
 ```json
 {
   "color" : "#00ff00",
-  "description": "a sample description"
+  "description": "an example description"
 }
 ```
 

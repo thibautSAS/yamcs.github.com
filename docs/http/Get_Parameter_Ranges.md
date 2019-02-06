@@ -36,7 +36,7 @@ A range is a tuple <tt>(start, stop, value, count)</tt> that represents the time
     <tr>
         <td class="code">maxGap</td>
         <td class="code">long</td>
-        <td>Time in milliseconds. If the distance between two subsequent samples of the parameter is bigger than this value (but smaller than the parameter expiration), then an artificial gap will be constructed.
+        <td>Time in milliseconds. If the distance between two subsequent values of the parameter is bigger than this value (but smaller than the parameter expiration), then an artificial gap will be constructed.
         This also applies if there is no parameter expiration defined for the parameter.</td>
     </tr>
     <tr>
@@ -78,11 +78,11 @@ A range is a tuple <tt>(start, stop, value, count)</tt> that represents the time
 ```
 
 * <tt>engValue</tt> is the engineering value of the parameter in the interval <tt>[timeStart, timeStop)</tt> time interval have to be considered as closed at start and open at stop.
-* <tt>timeStart</tt> is the generation time of a parameter sample.
+* <tt>timeStart</tt> is the generation time of a parameter value.
 * <tt>timeStop</tt> is:
   * if the value changes, <tt>timeStop</tt> is the generation time of the new value
-  * if the parameter expires or the <tt>maxGap</tt> has been set, <tt>timeStop</tt> is the generation time of the last sample plus the expiration time or the <tt>maxGap</tt>.
-* <tt>count</tt> is the number of parameter samples received in the interval.
+  * if the parameter expires or the <tt>maxGap</tt> has been set, <tt>timeStop</tt> is the generation time of the last value plus the expiration time or the <tt>maxGap</tt>.
+* <tt>count</tt> is the number of parameter values received in the interval.
 
 ### Alternative Media Types
 

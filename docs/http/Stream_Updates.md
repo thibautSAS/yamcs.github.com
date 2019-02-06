@@ -22,7 +22,7 @@ Here's a full request example in JSON-notation
 [1,1,3,{"stream": "subscribe", "data": {"stream": "tm_realtime"}}]
 ```
 
-As a result of the above call you will get updates whenever anybody publishes data to the specified stream. With Protobuf, the data can be fetched with the `getStreamData()`-method on in the `WebSocketSubscriptionData` object. With JSON, you might see something like this sample output:
+As a result of the above call you will get updates whenever anybody publishes data to the specified stream. With Protobuf, the data can be fetched with the `getStreamData()`-method on in the `WebSocketSubscriptionData` object. With JSON, you might see something like this example output:
 
 ```json
 [1,2,3]

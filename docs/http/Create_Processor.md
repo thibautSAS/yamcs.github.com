@@ -119,7 +119,7 @@ Start a replay at January 1st 2015 at 4.5x the original speed, and add client 12
 
 ```json
 {
-  "name" : "A sample processor",
+  "name" : "An example processor",
   "type": "Archive",
   "clientId" : [ 12 ],
   "config": "{\"utcStart\":\"2015-01-01T00:00:00.000Z\",\"speed\":\"4.5x\"}",

@@ -74,6 +74,7 @@ CREATE TABLE cmdhist(
     origin STRING,
     seqNum INT,
     cmdName STRING,
+    binary BINARY,
     PRIMARY KEY(
         gentime, 
         origin, 
@@ -88,6 +89,7 @@ Following is a short description of the columns used:
 * origin - is a string representing the originator of the command 
 * seqNum - is a sequence number provided by the originator. Each command originator is supposed to keep an independent sequence count for the commands it sends.
 * cmdName - is the XTCE fully qualified name of the command.
+* binary - the binary packet contents.
 
 In addition to these columns, there will be numerous dynamic columns set by the command verifiers, command releasers,etc.
 

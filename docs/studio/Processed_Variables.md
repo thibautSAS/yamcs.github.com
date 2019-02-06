@@ -65,7 +65,7 @@ Example PV Name:
 * <tt>sw:///YSS/SIMULATOR/some-software-param</tt>
 
 ### Simulated Values
-Locally generated simulation data. Mainly useful during testing, or in combination with other PVs using formulas. Full documentation is upcoming. For now please have a look at the sample operator displays in the YSS projects.
+Locally generated simulation data. Mainly useful during testing, or in combination with other PVs using formulas. Full documentation is upcoming. For now please have a look at the example operator displays in the YSS projects.
 
 Example PV Names:
 

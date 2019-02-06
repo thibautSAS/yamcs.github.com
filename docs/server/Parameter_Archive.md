@@ -6,7 +6,7 @@ sidebar: yes
 
 The parameter archive stores for each parameter tuples of (t<sub>i</sub>, ev<sub>i</sub>, rv<sub>i</sub>, ps<sub>i</sub>) where:
 
-* t<sub>i</sub> - is a timestamp when the sample has been taken
+* t<sub>i</sub> - is the "generation" timestamp of the value. The "reception" timestamp is not stored in the Parameter Archive.
 * ev<sub>i</sub> - is the engineering value of the parameter at the given time.
 * rv<sub>i</sub> - is the engineering value of the parameter at the given time.
 * ps<sub>i</sub> - is the parameter status of the parameter at the given time.
@@ -21,7 +21,7 @@ While this structure is good for fast retrieval, it doesn't allow updating data 
 ### Archive filling 
 There are two fillers that can be used to populate parameter archive:
 
-* Realtime filling - the RealtimeFillerTask will subscribe to a realtime processor and write to the archive the parameter samples.
+* Realtime filling - the RealtimeFillerTask will subscribe to a realtime processor and write the parameter values to the archive.
 * Backfilling - the ArchiveFillerTask will create from time to time replays from the stream archive and write the generated parameters to the archive.
 
 Due to the fact that data is stored in segments, one segment being a value in the (key,value) RocksDB, it is not efficient to write one "row" (data corresponding to one timestamp) at a time. It is much more efficient to collect data and write entire or at least partial segments at a time. 

@@ -11,12 +11,12 @@ We can notice that in a typical space data stream there are many parameters that
 
 In fact since the timestamps are 8 bytes long, they equal or execed in size the parameter values almost in all cases, even for parameters that do change.
 
-To reduce the size of the archive, some parameter archives store the values just when they change with respect to the previous value. Often (like in the device on/off example) the exact timestamps of the samples received in between the changes are not very important. One has to take care that gaps in the data are not mistaken for non-changing parameter values.  
+To reduce the size of the archive, some parameter archives only store the values when they change with respect to the previous value. Often, like in the above "device ON/OFF" example, the exact timestamps of the non-changing parameter values, received in between actual (but rare) value changes are not very important. One has to take care that gaps in the data are not mistaken for non-changing parameter values.
 Storing the values on change only will reduce the space required not only for the value but also (and more importantly) for the timestamp.
 
 However, we know that more often than not parameters are not sampled individually but in packets or frames, and many (if not all) the parameters from one packet share the same timestamp.
 
-Usually some of the parameters in these packets will be counters or other things that do change with each sample. It follows that at least for storing those ever changing parameter samples, one has to store the timestamps anyway.
+Usually some of the parameters in these packets will be counters or other things that do change with each sampling of the value. It follows that at least for storing those ever changing parameter values, one has to store the timestamps anyway.
 
 This is why, in Yamcs we do not adopt the "store on change only" strategy but a different one: we store the timestamps in one record and make reference to that record from all the parameters sharing those same timestamps. Of course it wouldn't make any sense to reference one singe timestamp value, instead we store multiple values in a segment and reference the time segment from all value segments that are related to it.
 
