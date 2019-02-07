@@ -24,7 +24,7 @@ This is why, in Yamcs we do not adopt the "store on change only" strategy but a 
 We have established that the Yamcs parameter archive stores rows of data of shape:
 (t, pv<sub>0</sub>, pv<sub>1</sub>, pv<sub>2</sub>,...,  pv<sub>n</sub>)
 
-Where pv<sub>0</sub>, pv<sub>1</sub>, pv<sub>2</sub>..pv<sub>n</sub> are parameter values (for different parameters) all sharing the same timestamp t. One advantage of seeing the data this way is that we do keep together parameters extracted from the same packet (and having the same timestamp). It is sometimes useful for operators to know a sepcific parameter from which packet has been extracted (e.g. which APID, packet ID in a CCSDS packet structure).
+Where pv<sub>0</sub>, pv<sub>1</sub>, pv<sub>2</sub>..pv<sub>n</sub> are parameter values (for different parameters) all sharing the same timestamp t. One advantage of seeing the data this way is that we do keep together parameters extracted from the same packet (and having the same timestamp). It is sometimes useful for operators to know a specific parameter from which packet has been extracted (e.g. which APID, packet ID in a CCSDS packet structure).
 
 The parameter archive partitions the data at two levels:
 
