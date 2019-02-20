@@ -34,6 +34,8 @@ services:
       cors:
         allowOrigin: "*"
         allowCredentials: false
+      website:
+        displayScope: GLOBAL
 {% endyaml %}
 
 ### Configuration Options
@@ -68,6 +70,11 @@ services:
     <td class="code">cors</td>
     <td class="code">map</td>
     <td>Configure cross-origin resource sharing for the HTTP API. Detailed below. If unset, CORS is not supported.</td>
+  </tr>
+  <tr>
+    <td class="code">website</td>
+    <td class="code">map</td>
+    <td>Configure properties of the Yamcs website.</td>
   </tr>
 </table>
 
@@ -119,5 +126,20 @@ Note that the embedded web interface of Yamcs does not need CORS enabled, becaus
     <td class="code">allowCredentials</td>
     <td class="code">boolean</td>
     <td>Whether the <tt>Access-Control-Allow-Credentials</tt> header of the preflight response is set to true. Default: <tt>false</tt></td>
+  </tr>
+</table>
+
+#### Website sub-configuration
+
+<table class="inline">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td class="code">displayScope</td>
+    <td class="code">string</td>
+    <td>Where to locate displays and layouts. One of <tt>INSTANCE</tt> or <tt>GLOBAL</tt>. Setting this to <tt>GLOBAL</tt> means that displays are shared between all instances. Setting this to <tt>INSTANCE</tt>, means that each instance uses its own displays. Default: <tt>GLOBAL</tt></td>
   </tr>
 </table>
