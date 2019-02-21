@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>
+    
+      
+        Search | Yamcs
+      
+    
+  </title>
+  <link rel="shortcut icon" href="/assets/site/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/site/apple-touch-icon.png">
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://www.yamcs.org/search/">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123272152-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-123272152-1');
+  </script>
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <div class="container top">
+    <div class="yamcs-header">
+      <a href="/">
+        <img src="/assets/site/yamcs.png">
+      </a>
+    </div>
+
+    <ul class="network-nav nav">
+      
+        <li>
+          <a class="page-link" href="/downloads/">Downloads</a>
+        </li>
+      
+        <li>
+          <a class="page-link" href="/updates/Yamcs_Server/">Updates</a>
+        </li>
+      
+        <li>
+          <a class="page-link" href="/docs/">Docs</a>
+        </li>
+      
+    </ul>
+
+    <div class="search-header" style="margin-left: 200px">
+      <form method="GET" action="/search/" autocomplete="off" spellcheck="false">
+        <input id="search-box" type="text" name="q" placeholder="Search..." size="25">
+      </form>
+    </div>
+  </div>
+  <div style="clear:both;"></div>
+</header>
+
+
+    <div id="content">
+      <div class="container small">
+
+        
+        
+
+        
+        
+
+        
+
+        
+
+        
+
+        <div class="main">
+          
+          <h1>
+            
+
+
+
+
+
+
+            
+              Search
+            
+          </h1>
+          
+
+          <style>
+  .hl {
+    font-weight: bold;
+    color: #6a6a6a;
+  }
+  h4 {
+    margin-bottom: 0 !important;
+  }
+  div.excerpt {
+    margin-bottom: 1.5em;
+    font-size: 11pt;
+    max-width: 600px;
+  }
+</style>
+
+<div id="search-matches">
+  Searching...
+</div>
+
+<script src="/js/lunr.js"></script>
+<script>
+  window.addEventListener('load', function() {
+    
+    function loadPageData(onData) {
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            onData(JSON.parse(xhr.responseText));
+        }
+      };
+      xhr.open('GET', '/search/pages.json', true);
+      xhr.send();
+    }
+
+    function buildIndex(documents) {
+      var idx = lunr(function () {
+        this.ref('url');
+        this.field('body');
+        this.metadataWhitelist = ['position'];
+
+        documents.forEach(function (doc) {
+          this.add(doc);
+        }, this);
+      });
+      return idx;
+    }
+
+    function toHTML(match, terms, page) {
+      var url = match['ref'];
+      var title = page['title'];
+
+      var firstMatchPosition;
+      var metadata = match['matchData']['metadata'];
+      for (var key in metadata) {
+        var pos = metadata[key]['body']['position'][0][0];
+        if (firstMatchPosition === undefined || firstMatchPosition > pos) {
+          firstMatchPosition = pos;
+        }
+      }
+      var excerpt = '';
+      var excerptLength = 200;
+
+      // No need to offset if the first match is already visible.
+      if (firstMatchPosition < excerptLength) {
+        firstMatchPosition = 0;
+      } else {
+        excerpt = '... ';
+      }
+
+      excerpt += page['body'].substr(firstMatchPosition);
+      if (excerpt.length > excerptLength) {
+        excerpt = excerpt.substr(0, excerptLength) + ' ...';
+      }
+
+      // Highlight
+      for (var i = 0; i < terms.length; i++) {
+        var escaped = terms[i].replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        var re = new RegExp('(' + escaped + ')', 'gi')
+        excerpt = excerpt.replace(re, '<span class="hl">$1</span>');
+      }
+
+      var result = '<h4><a href="' + url + '">' + title + '</a></h4>\n';
+      result += '<div class="excerpt">' + excerpt + '</div>\n';
+      return result;
+    }
+
+    function getParameterByName(name) {
+      name = name.replace(/[\[\]]/g, '\\$&');
+      var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+      var results = regex.exec(window.location.href);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    loadPageData(function(data) {
+      var idx = buildIndex(data);
+
+      var pagesByUrl = {};
+      for (var i = 0; i < data.length; i++) {
+        pagesByUrl[data[i]['url']] = data[i];
+      }
+
+      var q = getParameterByName('q');
+      var matches = idx.search(q);
+      var terms = q.match(/\S+/g) || [];
+
+      var htmlContent = '<p><small>' + matches.length + ' matches</small></p>';
+      for (var i = 0; i < matches.length; i++) {
+        var match = matches[i];
+        var page = pagesByUrl[match['ref']];
+        htmlContent += toHTML(match, terms, page);
+      }
+      document.getElementById('search-matches').innerHTML = htmlContent;
+    });
+  });
+</script>
+
+
+          
+
+          
+
+          <p>&nbsp;</p>
+          
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="container small">
+    <div class="footer-inset">
+      <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-1">
+          <ul class="contact-list">
+            <li>&copy; 2019 Space Applications Services</li>
+            <li>
+              <a
+                  id="site_m"
+                  data-m1="eWFtY3M="
+                  data-m2="QHNwYWNlYXBwbGljYXRpb25zLmNvbQ=="
+                  href="#">
+               </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-2">
+        </div>
+
+        <div class="footer-col footer-col-3">
+          <p class="text" style="text-align: right;">
+            <a href="https://github.com/yamcs/yamcs/issues">Report a Yamcs issue</a><br>
+            <a href="https://github.com/yamcs" style="padding-left: 10px">
+              <span class="icon icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+              Yamcs on GitHub
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script>
+    window.addEventListener('load', function() {
+      var emailEl = document.getElementById('site_m');
+      var v = atob(emailEl.getAttribute('data-m1')) + atob(emailEl.getAttribute('data-m2'));
+      emailEl.setAttribute('hr' + 'ef', 'ma' + 'ilt' + 'o:' + v);
+      emailEl.innerText = v;
+
+      var regex = new RegExp('[?&]q(=([^&#]*)|&|#|$)');
+      var results = regex.exec(window.location.href);
+      if (results && results[2]) {
+        var searchBoxEl = document.getElementById('search-box');
+        if (searchBoxEl) {
+          searchBoxEl.value = decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+      }
+    });
+  </script>
+
+</footer>
+
+  </body>
+</html>

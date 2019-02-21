@@ -1,0 +1,121 @@
+body {
+  overflow: visible;
+  counter-reset: h1counter;
+}
+
+h1.toc {
+  counter-reset: h2counter;
+}
+
+h1.toc:before {
+  content: 'Chapter\0000a0\0000a0' counter(h1counter) ".\0000a0\0000a0";
+  counter-increment: h1counter;
+  counter-reset: h2counter;
+}
+
+h1.toc.nocount:before {
+  content: none;
+  counter-increment: none;
+}
+
+h2.toc {
+  counter-reset: h3counter;
+}
+
+h2.toc:before {
+  content: counter(h1counter) "." counter(h2counter) ".\0000a0\0000a0";
+  counter-increment: h2counter;
+}
+
+h2.toc.nocount:before {
+  content: none;
+  counter-increment: none;
+}
+
+h3.toc:before {
+  content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
+  counter-increment: h3counter;
+}
+
+h3.toc.nocount:before {
+  content: none;
+  counter-increment: none;
+}
+
+h4 {
+  font-weight: bold;
+}
+
+pre {
+  white-space: pre-wrap;
+  overflow: hidden;
+}
+
+@media print {
+  html {
+    /* 122mm when not justifying */
+    width: 132mm; /* Magic number.. Should be 210, maybe minus margins, but that causes clipping. needs tests. */
+    /*height: 297mm;*/
+  }
+
+  body {
+    /* interesting. using this property actually means that i need to adjust the above magic number */
+    text-align: justify;
+  }
+
+  .newpage {
+    page-break-before: always;
+  }
+
+  body {
+    font-size: 11px;
+    /*line-height: 1.5em;*/
+  }
+
+  pre, code, td.code {
+    font-size: 9px;
+  }
+
+  .highlight {
+    background: none;
+  }
+
+  pre, pre.header, code {
+    background: none;
+    border: none;
+  }
+
+  pre.r.header {
+    display: none;
+  }
+
+  strong {
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  table, tr, td, th, tbody, thead, tfoot, .hint {
+    page-break-inside: avoid !important;
+  }
+
+  a {
+    color: black !important;
+    text-decoration: none !important;
+  }
+
+  .noprint {
+    display: none;
+  }
+}
+
+#markdown-toc, .chaptertoc {
+  display: none;
+}
+
+a {
+  color: #3e4982;
+}
+
+a:visited {
+  color: #3e4982;
+}

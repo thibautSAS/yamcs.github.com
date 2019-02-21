@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>
+    
+      
+        Yamcs Server Updates (v3.x.x) | Yamcs
+      
+    
+  </title>
+  <link rel="shortcut icon" href="/assets/site/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/site/apple-touch-icon.png">
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://www.yamcs.org/updates/Yamcs_Server_(v3.x.x)/">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123272152-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-123272152-1');
+  </script>
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <div class="container top">
+    <div class="yamcs-header">
+      <a href="/">
+        <img src="/assets/site/yamcs.png">
+      </a>
+    </div>
+
+    <ul class="network-nav nav">
+      
+        <li>
+          <a class="page-link" href="/downloads/">Downloads</a>
+        </li>
+      
+        <li>
+          <a class="page-link" href="/updates/Yamcs_Server/">Updates</a>
+        </li>
+      
+        <li>
+          <a class="page-link" href="/docs/">Docs</a>
+        </li>
+      
+    </ul>
+
+    <div class="search-header" style="margin-left: 200px">
+      <form method="GET" action="/search/" autocomplete="off" spellcheck="false">
+        <input id="search-box" type="text" name="q" placeholder="Search..." size="25">
+      </form>
+    </div>
+  </div>
+  <div style="clear:both;"></div>
+</header>
+
+
+    <div id="content">
+      <div class="container">
+
+        
+        
+
+        
+        
+
+        
+
+        
+
+        
+          <div id="sidebar" class="sidebar">
+  
+    <div style="border-bottom: 1px solid #e8e8e8; padding-bottom: 0.5em; margin-bottom: 1em; font-weight: 400; text-align: center;">Release Notes</div>
+  
+
+  
+
+    
+
+    
+    
+    
+
+    <div class="sidebar-item  collapsed">
+      
+      <a class="sidebar-item-hdr" href="/updates/Yamcs_Server/">Yamcs Server</a>
+
+      
+
+    </div>
+
+  
+
+    
+
+    
+    
+    
+
+    <div class="sidebar-item active expanded">
+      
+      <a class="sidebar-item-hdr" href="/updates/Yamcs_Server_(v3.x.x)/">Yamcs Server (v3.x.x)</a>
+
+      
+
+    </div>
+
+  
+
+    
+
+    
+    
+    
+
+    <div class="sidebar-item  collapsed">
+      
+      <a class="sidebar-item-hdr" href="/updates/Yamcs_Studio/">Yamcs Studio</a>
+
+      
+
+    </div>
+
+  
+
+    
+
+    
+    
+    
+
+    <div class="sidebar-item  collapsed">
+      
+      <a class="sidebar-item-hdr" href="/updates/Yamcs_Studio_(v1.0.x)/">Yamcs Studio (v1.0.x)</a>
+
+      
+
+    </div>
+
+  
+</div>
+
+        
+
+        <div class="main with-sidebar">
+          
+            
+
+
+          
+          <h1>
+            
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+    
+
+
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+      
+  <div class="next-link noprint">
+    <a href="/updates/Yamcs_Studio/">
+      
+        Yamcs Studio Updates
+      
+      &#xbb;
+    </a>
+  </div>
+
+
+
+            
+              Yamcs Server Updates (v3.x.x)
+            
+          </h1>
+          
+
+          
+<h2>
+    Yamcs 3.4.7<span style="font-size: 10pt">&nbsp;&nbsp;[<a href="https://github.com/yamcs/yamcs/releases/download/yamcs-3.4.7/yamcs-3.4.7%2Brf9da5551-10.noarch.rpm">.rpm</a>]</span>
+    <span style="font-size: small; float: right">Oct 25, 18</span>
+  </h2>
+
+<ul>
+  <li>Fix for issue #277: Event Viewer: sorting makes it open the wrong “event details”</li>
+</ul>
+
+<hr style="border: none; height: 1px; background-color: #e8e8e8; margin-top: 2em; margin-bottom: 2em" />
+
+<h2>
+    Yamcs 3.4.6<span style="font-size: 10pt">&nbsp;&nbsp;[<a href="https://github.com/yamcs/yamcs/releases/download/yamcs-3.4.6/yamcs-3.4.6%2Br3021dbc6-10.noarch.rpm">.rpm</a>]</span>
+    <span style="font-size: small; float: right">Oct 01, 18</span>
+  </h2>
+
+<ul>
+  <li>added a workaround for a bug where the data is not garbage collected after a
+parameter archive refill happens</li>
+</ul>
+
+<hr style="border: none; height: 1px; background-color: #e8e8e8; margin-top: 2em; margin-bottom: 2em" />
+
+<h2>
+    Yamcs 3.4.5<span style="font-size: 10pt">&nbsp;&nbsp;[<a href="https://github.com/yamcs/yamcs/releases/download/yamcs-3.4.5/yamcs-3.4.5.r2c8ffebe-10.noarch.rpm">.rpm</a>]</span>
+    <span style="font-size: small; float: right">Jul 11, 18</span>
+  </h2>
+
+<ul>
+  <li>fixed the replay service to always take into account the parameter group exclusion
+option implemented in 3.4.4</li>
+</ul>
+
+<hr style="border: none; height: 1px; background-color: #e8e8e8; margin-top: 2em; margin-bottom: 2em" />
+
+<h2>
+    Yamcs 3.4.4<span style="font-size: 10pt">&nbsp;&nbsp;[<a href="https://github.com/yamcs/yamcs/releases/download/yamcs-3.4.4/yamcs-3.4.4.r1958cb93-10.noarch.rpm">.rpm</a>]</span>
+    <span style="font-size: small; float: right">May 09, 18</span>
+  </h2>
+
+<ul>
+  <li>added the possibility to exclude parameter groups from replays</li>
+</ul>
+
+<hr style="border: none; height: 1px; background-color: #e8e8e8; margin-top: 2em; margin-bottom: 2em" />
+
+<h2>
+    Yamcs 3.4.3<span style="font-size: 10pt">&nbsp;&nbsp;[<a href="https://github.com/yamcs/yamcs/releases/download/yamcs-3.4.3/yamcs-3.4.3.r2654bd2-10.noarch.rpm">.rpm</a>]</span>
+    <span style="font-size: small; float: right">Mar 28, 18</span>
+  </h2>
+
+<ul>
+  <li>fixed the replay not starting at the correct time</li>
+  <li>change the serialized XTCEDB filename to limit its length (use SHA-1 of the old name)</li>
+</ul>
+
+<hr style="border: none; height: 1px; background-color: #e8e8e8; margin-top: 2em; margin-bottom: 2em" />
+
+<h2>
+    Yamcs 3.4.2<span style="font-size: 10pt">&nbsp;&nbsp;[<a href="https://github.com/yamcs/yamcs/releases/download/yamcs-3.4.2/yamcs-3.4.2.rc6cbdf6-10.noarch.rpm">.rpm</a>]</span>
+    <span style="font-size: small; float: right">Feb 12, 18</span>
+  </h2>
+
+<ul>
+  <li>fixed Artemis data links</li>
+  <li>the parameter select dialog from the Archive Browser will show now also parameters that are not part of containers</li>
+</ul>
+
+<hr style="border: none; height: 1px; background-color: #e8e8e8; margin-top: 2em; margin-bottom: 2em" />
+
+<h2>
+    Yamcs 3.4.0<span style="font-size: 10pt">&nbsp;&nbsp;[<a href="https://github.com/yamcs/yamcs/releases/download/yamcs-3.4.0/yamcs-3.4.0.r3d069bc-10.noarch.rpm">.rpm</a>]</span>
+    <span style="font-size: small; float: right">Dec 06, 17</span>
+  </h2>
+
+<ul>
+  <li>moved artemis into a separate source project which yamcs-core does not depend on. 
+Allow to connect to an external Artemis server by specifying artemisUrl: “tcp://…” into yamcs.<instance>.yaml or yamcs.yaml</instance></li>
+  <li>added the possibility to restart instances and send information about current connected instance/processor via websocket</li>
+  <li>added command history cascading via Artemis</li>
+  <li>TcpTcDataLink: added an option to limit the rate of commands sent</li>
+  <li>make an rpm for yamcs-simulation which can be used together with the yamcs rpm to get a yamcs sistem runing.</li>
+</ul>
+
+<hr style="border: none; height: 1px; background-color: #e8e8e8; margin-top: 2em; margin-bottom: 2em" />
+
+<h2>
+    Yamcs 3.3.1<span style="font-size: 10pt">&nbsp;&nbsp;[<a href="https://github.com/yamcs/yamcs/releases/download/yamcs-3.3.1/yamcs-3.3.1.rad90800-10.noarch.rpm">.rpm</a>]</span>
+    <span style="font-size: small; float: right">Nov 13, 17</span>
+  </h2>
+
+<ul>
+  <li>Moved the MulticastTmDataLink out of the yamcs-core (into yamcs-dass) because it’s DaSS specific</li>
+  <li>Added a new UdpTmDataLink to replace the removed multiacst functionality. Contrary to the multicast service, the UDP one receives packets as CCSDS packets without any extra header</li>
+</ul>
+
+<hr style="border: none; height: 1px; background-color: #e8e8e8; margin-top: 2em; margin-bottom: 2em" />
+
+<h2>
+    Yamcs 3.3.0<span style="font-size: 10pt">&nbsp;&nbsp;[<a href="https://github.com/yamcs/yamcs/releases/download/yamcs-3.3.0/yamcs-3.3.0.r227c192-10.noarch.rpm">.rpm</a>]</span>
+    <span style="font-size: small; float: right">Oct 24, 17</span>
+  </h2>
+
+<ul>
+  <li>Support index requests with request parameters encoded in the HTTP request body in order to allow a large number of packets to be specified (otherwise, the request would exceed maximum URI size).</li>
+  <li>Allow alias parameter name  references in the MDB SpreadSheets (including in the Alarm sheet which didn’t allow any reference at all)</li>
+  <li>Fixed the reading of ranges (inclusive vs exclusive) from XTCE XML files</li>
+  <li>Added two options to websocket parameter subscription:
+    <ul>
+      <li>send an update when parameters are expiring (by default false)</li>
+      <li>send the first value from cache if available (by default true)</li>
+    </ul>
+  </li>
+  <li>Change the expirationTime (absolute time) to expireMillis (relative time) in the ParameterValue.</li>
+  <li>Implemented parameter expiration in the USS web displays</li>
+  <li>Allow to specify custom decoders to be used in container(packet) processing</li>
+  <li>Added binary data encoding with leading size specified (similar to string)</li>
+  <li>Changed the spreadsheet to make clearer the difference between raw value, encoding (how to decode the raw value from the binary) and engineering value (raw value passed through a calibration function)</li>
+  <li>For standalone parameters (i.e. not extracted from XTCE packets) coming without an engineering value, 
+calibrate (raw-&gt;eng value) them inside the processor rather than before being injected in the stream.
+This means the parameters are stored in the stream archive also in the initial form (could be raw+eng, only raw or only eng) and they are calibrated (using the current MDB) for each replay
+Of course ParameterArchive will store them calibrated.</li>
+  <li>Added a command “yamcs confcheck” to check a complete yamcs configuration by loading the services without starting them</li>
+</ul>
+
+<hr style="border: none; height: 1px; background-color: #e8e8e8; margin-top: 2em; margin-bottom: 2em" />
+
+<h2>
+    Yamcs 3.2.2<span style="font-size: 10pt">&nbsp;&nbsp;[<a href="https://github.com/yamcs/yamcs/releases/download/yamcs-3.2.2/yamcs-3.2.2.re915395-10.noarch.rpm">.rpm</a>]</span>
+    <span style="font-size: small; float: right">May 17, 17</span>
+  </h2>
+
+<ul>
+  <li>Fixed tag handling in Yamcs Monitor/Archive Browser</li>
+</ul>
+
+<hr style="border: none; height: 1px; background-color: #e8e8e8; margin-top: 2em; margin-bottom: 2em" />
+
+<h2>
+    Yamcs 3.2.1<span style="font-size: 10pt">&nbsp;&nbsp;[<a href="https://github.com/yamcs/yamcs/releases/download/yamcs-3.2.1/yamcs-3.2.1.r4429eba-10.noarch.rpm">.rpm</a>]</span>
+    <span style="font-size: small; float: right">May 15, 17</span>
+  </h2>
+
+<ul>
+  <li>Added an option to “yamcs rocksdb compact”  to specify the target file size and changed the default size from 64MB to 256MB</li>
+  <li>Java expressions can be used for raw-&gt;engineering value calibration (in addition to polynomial and spline). This allow to use mathematical expressions such as logarithms and trigonometric functions.</li>
+  <li>fixed seek in replays</li>
+  <li>Fix in Yamcs Monitor: remove closed processors from the list</li>
+  <li>RocksDB: set by default the table block cache to 8MB (previously it was disabled)</li>
+</ul>
+
+<hr style="border: none; height: 1px; background-color: #e8e8e8; margin-top: 2em; margin-bottom: 2em" />
+
+<h2>
+    Yamcs 3.2.0<span style="font-size: 10pt">&nbsp;&nbsp;[<a href="https://github.com/yamcs/yamcs/releases/download/yamcs-3.2.0/yamcs-3.2.0.ra3488ca-10.noarch.rpm">.rpm</a>]</span>
+    <span style="font-size: small; float: right">Apr 18, 17</span>
+  </h2>
+
+<ul>
+  <li>Improved the yamcs command line with several new sub-commands (xtcedb, parchive)</li>
+  <li>Removed Artemis based replays and management (control processors)</li>
+  <li>Added a new yatch(table/stream) data type PARAMETER_VALUE to replace PROTOBUF(ParameterValue) for more flexibility</li>
+</ul>
+
+<hr style="border: none; height: 1px; background-color: #e8e8e8; margin-top: 2em; margin-bottom: 2em" />
+
+<h2>
+    Yamcs 3.1.1<span style="font-size: 10pt">&nbsp;&nbsp;[<a href="https://github.com/yamcs/yamcs/releases/download/yamcs-3.1.1/yamcs-3.1.1.r72031a1-10.noarch.rpm">.rpm</a>]</span>
+    <span style="font-size: small; float: right">Mar 14, 17</span>
+  </h2>
+
+<ul>
+  <li>fixed a bug in the RestClient causing the Swing client tools (Yamcs Monitor &amp;co) to NPE when doing File -&gt; Connect to Yamcs (connection by specifying the http url in the command line still worked)</li>
+</ul>
+
+<hr style="border: none; height: 1px; background-color: #e8e8e8; margin-top: 2em; margin-bottom: 2em" />
+
+<h2>
+    Yamcs 3.1.0<span style="font-size: 10pt">&nbsp;&nbsp;[<a href="https://github.com/yamcs/yamcs/releases/download/yamcs-3.1.0/yamcs-3.1.0.rfffdba3-10.noarch.rpm">.rpm</a>]</span>
+    <span style="font-size: small; float: right">Mar 14, 17</span>
+  </h2>
+
+<p>Changelog</p>
+<ul>
+  <li>MDB: allow parameters without raw types if they are not part of a container</li>
+  <li>REST Api: add option to get the details of parameters in ‘list parameter’</li>
+  <li>Ease extension of the FilePollingTmDatalink and TmFileReader.</li>
+  <li>if processor -&gt; cacheall is disabled, retrieve at least all parameters that have alarms associated</li>
+  <li>allow algorithm manager to be usable in replays</li>
+  <li>Improved XTCE XML parsing support:
+    - read alarms
+    - read string parameters
+    - read multiple space systems</li>
+  <li>Removed the name from the DataEncoding classes (in XTCE DataEncodings are not named)</li>
+  <li>allow to remove a parameter from the XtceDB (to be used in a controlled way only)</li>
+  <li>Changed the order of starting the services:
+    <ol>
+      <li>All global services are created</li>
+      <li>All instance services are created</li>
+      <li>All global services are started</li>
+      <li>All instance services are started</li>
+    </ol>
+
+    <p>Used to be 1,3,(2,4)+ - and this makes for example the HttpServer to be started before the instances are created and some methods (like subscribe event,time,etc) will fail at first because the processor is not available.</p>
+  </li>
+  <li>updated to RocksDB 5.1.2</li>
+</ul>
+
+<hr style="border: none; height: 1px; background-color: #e8e8e8; margin-top: 2em; margin-bottom: 2em" />
+
+<h2>
+    Yamcs 3.0.0<span style="font-size: 10pt">&nbsp;&nbsp;[<a href="https://github.com/yamcs/yamcs/releases/download/yamcs-3.0.0/yamcs-3.0.0.r5fcc6ce-10.noarch.rpm">.rpm</a>]</span>
+    <span style="font-size: small; float: right">Jan 12, 17</span>
+  </h2>
+
+<p>This is the first non-zero (0.x.y) release of Yamcs after almost 10 years of development and 4 years after making it open-source.
+We call it 3.0 instead of 1.0 because internally at Space Applications we have already defined Yamcs 1 and 2 for the versions used in actual Control Centres.</p>
+
+<p>Changelog</p>
+<ul>
+  <li>there is no difference between version 3.0 and 0.30.0 except the version number.</li>
+</ul>
+
+
+
+          
+
+          
+
+          <p>&nbsp;</p>
+          
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+    
+
+
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+      
+  <div class="next-link noprint">
+    <a href="/updates/Yamcs_Studio/">
+      
+        Yamcs Studio Updates
+      
+      &#xbb;
+    </a>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="container">
+    <div class="footer-inset with-sidebar">
+      <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-1">
+          <ul class="contact-list">
+            <li>&copy; 2019 Space Applications Services</li>
+            <li>
+              <a
+                  id="site_m"
+                  data-m1="eWFtY3M="
+                  data-m2="QHNwYWNlYXBwbGljYXRpb25zLmNvbQ=="
+                  href="#">
+               </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-2">
+        </div>
+
+        <div class="footer-col footer-col-3">
+          <p class="text" style="text-align: right;">
+            <a href="https://github.com/yamcs/yamcs/issues">Report a Yamcs issue</a><br>
+            <a href="https://github.com/yamcs" style="padding-left: 10px">
+              <span class="icon icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+              Yamcs on GitHub
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script>
+    window.addEventListener('load', function() {
+      var emailEl = document.getElementById('site_m');
+      var v = atob(emailEl.getAttribute('data-m1')) + atob(emailEl.getAttribute('data-m2'));
+      emailEl.setAttribute('hr' + 'ef', 'ma' + 'ilt' + 'o:' + v);
+      emailEl.innerText = v;
+
+      var regex = new RegExp('[?&]q(=([^&#]*)|&|#|$)');
+      var results = regex.exec(window.location.href);
+      if (results && results[2]) {
+        var searchBoxEl = document.getElementById('search-box');
+        if (searchBoxEl) {
+          searchBoxEl.value = decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+      }
+    });
+  </script>
+
+</footer>
+
+  </body>
+</html>
