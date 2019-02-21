@@ -10,7 +10,7 @@ Subscribe to parameter updates:
 [ 1, 1, :seq, {
     "parameter": "subscribe",
     "data": {
-        "list": [
+        "id": [
             { "namespace": ":namespace", "name": ":name" }
         ],
         "updateOnExpiration": false,
@@ -43,7 +43,7 @@ Subscribe to BatteryVoltage1 through a qualified name, and BatteryVoltage2 using
 [ 1, 1, 789, {
     "parameter": "subscribe",
     "data": {
-        "list": [
+        "id": [
             { "name": "/YSS/SIMULATOR/BatteryVoltage1" },
             { "namespace": "MDB:OPS Name", "name": "SIMULATOR_BatteryVoltage2" }
         ]
@@ -67,68 +67,67 @@ Note that all parameters are returned with the same identification they have bee
 
 ```json
 [1, 4, 2, {
-        "dt": "PARAMETER",
-        "data": {
-                "parameter": [{
-                        "id": {
-                                "name": "/YSS/SIMULATOR/BatteryVoltage1"
-                        },
-                        "rawValue": {
-                                "type": "UINT32",
-                                "uint32Value": 10
-                        },
-                        "engValue": {
-                                "type": "UINT32",
-                                "uint32Value": 10
-                        },
-                        "acquisitionTime": 1514993937058,
-                        "generationTime": 1514993932468,
-                        "acquisitionStatus": "ACQUIRED",
-                        "processingStatus": true,
-                        "monitoringResult": "IN_LIMITS",
-                        "acquisitionTimeUTC": "2018-01-03T15:38:20.058Z",
-                        "generationTimeUTC": "2018-01-03T15:38:15.468Z",
-                        "expirationTime": 1514993950358,
-                        "expirationTimeUTC": "2018-01-03T15:38:33.358Z",
-                        "alarmRange": [{
-                                "level": "CRITICAL",
-                                "minInclusive": 9.0,
-                                "maxInclusive": 15.0
-                        }],
-                        "expireMillis": 13300
-                }, {
-                        "id": {
-                                "name": "SIMULATOR_BatteryVoltage2",
-                                "namespace": "MDB:OPS Name"
-                        },
-                        "rawValue": {
-                                "type": "UINT32",
-                                "uint32Value": 192
-                        },
-                        "engValue": {
-                                "type": "UINT32",
-                                "uint32Value": 192
-                        },
-                        "acquisitionTime": 1514993937058,
-                        "generationTime": 1514993932468,
-                        "acquisitionStatus": "ACQUIRED",
-                        "processingStatus": true,
-                        "monitoringResult": "CRITICAL",
-                        "rangeCondition": "HIGH",
-                        "acquisitionTimeUTC": "2018-01-03T15:38:20.058Z",
-                        "generationTimeUTC": "2018-01-03T15:38:15.468Z",
-                        "expirationTime": 1514993950358,
-                        "expirationTimeUTC": "2018-01-03T15:38:33.358Z",
-                        "alarmRange": [{
-                                "level": "CRITICAL",
-                                "minInclusive": 2.0,
-                                "maxInclusive": 15.0
-                        }],
-                        "expireMillis": 13300
-                }],
-                "subscriptionId": 6
-        }
-        
+    "dt": "PARAMETER",
+    "data": {
+        "parameter": [{
+            "id": {
+                "name": "/YSS/SIMULATOR/BatteryVoltage1"
+            },
+            "rawValue": {
+                "type": "UINT32",
+                "uint32Value": 10
+            },
+            "engValue": {
+                "type": "UINT32",
+                "uint32Value": 10
+            },
+            "acquisitionTime": 1514993937058,
+            "generationTime": 1514993932468,
+            "acquisitionStatus": "ACQUIRED",
+            "processingStatus": true,
+            "monitoringResult": "IN_LIMITS",
+            "acquisitionTimeUTC": "2018-01-03T15:38:20.058Z",
+            "generationTimeUTC": "2018-01-03T15:38:15.468Z",
+            "expirationTime": 1514993950358,
+            "expirationTimeUTC": "2018-01-03T15:38:33.358Z",
+            "alarmRange": [{
+                "level": "CRITICAL",
+                "minInclusive": 9.0,
+                "maxInclusive": 15.0
+            }],
+            "expireMillis": 13300
+        }, {
+            "id": {
+                "name": "SIMULATOR_BatteryVoltage2",
+                "namespace": "MDB:OPS Name"
+            },
+            "rawValue": {
+                "type": "UINT32",
+                "uint32Value": 192
+            },
+            "engValue": {
+                "type": "UINT32",
+                "uint32Value": 192
+            },
+            "acquisitionTime": 1514993937058,
+            "generationTime": 1514993932468,
+            "acquisitionStatus": "ACQUIRED",
+            "processingStatus": true,
+            "monitoringResult": "CRITICAL",
+            "rangeCondition": "HIGH",
+            "acquisitionTimeUTC": "2018-01-03T15:38:20.058Z",
+            "generationTimeUTC": "2018-01-03T15:38:15.468Z",
+            "expirationTime": 1514993950358,
+            "expirationTimeUTC": "2018-01-03T15:38:33.358Z",
+            "alarmRange": [{
+                "level": "CRITICAL",
+                "minInclusive": 2.0,
+                "maxInclusive": 15.0
+            }],
+            "expireMillis": 13300
+        }],
+        "subscriptionId": 6
+    }
 }]
 ```
 
@@ -141,7 +140,7 @@ Unsubscribe from selected parameter updates:
 [ 1, 1, 790, {
     "parameter": "unsubscribe" 
     "data": {
-        "list": [
+        "id": [
             { "name": "/YSS/SIMULATOR/BatteryVoltage1" },
             { "namespace": "MDB:OPS Name", "name": "SIMULATOR_BatteryVoltage2" }
         ],
