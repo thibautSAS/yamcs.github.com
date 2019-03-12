@@ -5,7 +5,7 @@ sidebar: yes
 ---
 
 ### Mission Database
-The Mission Database is a dictionary containing the description of all the telemetry packets, parameters and commands. Yamcs implements concepts from the XTCE standard (XML Telemetric & Command Exchange). Although this standard specifies how to describe a mission database in XML, it also prescribes a series of building blocks for such a database: SpaceSystens, containers, parameters, commands, algorithms, etc.
+The Mission Database is a dictionary containing the description of all the telemetry packets, parameters and commands. Yamcs implements concepts from the XTCE standard (XML Telemetric & Command Exchange). Although this standard specifies how to describe a mission database in XML, it also prescribes a series of building blocks for such a database: SpaceSystems, containers, parameters, commands, algorithms, etc.
 
 In Yamcs we do not have as a primary goal the compliance with the XML representation (although Yamcs does have an XTCE XML loader) but more to the structure and the concepts of an XTCE database.  
 In fact the primary representation for the mission database in Yamcs is an excel spreadsheet because we noticed that many operators prefer to work with such tool. It is however possible to create database loaders for different formats and it has been done many times in order to be interoperable with other tools (integration is key aspect of Yamcs).
