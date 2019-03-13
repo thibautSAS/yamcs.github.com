@@ -1,10 +1,10 @@
 ---
 layout: default
-permalink: /docs/http/Edit_Processor/
+permalink: /docs/http/Control_Processor/
 sidebar: yes
 ---
 
-Edit a processor:
+Control a processor:
 
     PATCH /api/processors/:instance/:name
 

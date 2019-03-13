@@ -51,6 +51,8 @@
   items:
     - url: /docs/http/List_Instances/
     - url: /docs/http/Get_Instance_Detail/
+    - url: /docs/http/Control_Instance/
+    - url: /docs/http/Create_Instance/
 - url: /docs/http/Links/
   items:
     - url: /docs/http/List_Links/
@@ -90,7 +92,7 @@
     - url: /docs/http/List_Processors/
     - url: /docs/http/Get_Processor_Info/
     - url: /docs/http/Create_Processor/
-    - url: /docs/http/Edit_Processor/
+    - url: /docs/http/Control_Processor/
     - url: /docs/http/Delete_Processor/
 - url: /docs/http/RocksDB/
   items:
