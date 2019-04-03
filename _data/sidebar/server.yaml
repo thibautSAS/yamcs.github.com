@@ -42,17 +42,6 @@
     - url: /docs/server/Artemis_Parameter_Publisher/
     - url: /docs/server/Artemis_TM_Publisher/
     - url: /docs/server/Command_History_Recorder/
-    - url: /docs/server/Data_Link_Initialiser/
-      items:
-        - url: /docs/server/Artemis_Parameter_Data_Link/
-        - url: /docs/server/Artemis_TM_Data_Link/
-        - url: /docs/server/File_Polling_TM_Data_Link/
-        #- url: /docs/server/Simulated_Parameter_Data_Link/  # not in main RPM
-        - url: /docs/server/TCP_TC_Data_Link/
-        - url: /docs/server/TCP_TM_Data_Link/
-        - url: /docs/server/TSE_Data_Link/
-        - url: /docs/server/UDP_Parameter_Data_Link/
-        - url: /docs/server/UDP_TM_Data_Link/
     - url: /docs/server/Event_Recorder/
     - url: /docs/server/Index_Server/
     - url: /docs/server/Parameter_Archive_Service/
@@ -61,6 +50,19 @@
     - url: /docs/server/Replay_Server/
     - url: /docs/server/System_Parameters_Collector/
     - url: /docs/server/XTCE_TM_Recorder/
+
+- url: /docs/server/Data_Link/
+  items:
+    - url: /docs/server/Artemis_Parameter_Data_Link/
+    - url: /docs/server/Artemis_TM_Data_Link/
+    - url: /docs/server/File_Polling_TM_Data_Link/
+    #- url: /docs/server/Simulated_Parameter_Data_Link/  # not in main RPM
+    - url: /docs/server/TCP_TC_Data_Link/
+    - url: /docs/server/TCP_TM_Data_Link/
+    - url: /docs/server/TSE_Data_Link/
+    - url: /docs/server/UDP_Parameter_Data_Link/
+    - url: /docs/server/UDP_TC_Data_Link/
+    - url: /docs/server/UDP_TM_Data_Link/
 
 - url: /docs/server/Processor_Services/
   items:
